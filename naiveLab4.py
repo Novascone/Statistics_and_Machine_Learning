@@ -43,8 +43,8 @@ stdFemaleHeight = np.std(female[:,0])
 stdFemaleWeight = np.std(female[:,1])
 stdFemaleFoot = np.std(female[:,2])
 
-probabilityMaleFromTest = 0.5 # 4/8
-probabilityFemaleFromTest = 0.5 # 4/8
+priorMale = 0.5 # 4/8
+priorFemale = 0.5 # 4/8
 
 probabilityHeightIsTheSample1HieghtGivenMale = stats.norm.pdf(sample1[0], meanMaleHeight, stdMaleHeight)
 probabilityWeightIsTheSample1WeightGivenMale = stats.norm.pdf(sample1[1], meanMaleWeight, stdMaleWeight)
@@ -62,11 +62,11 @@ probabilityHeightIsTheSample2HieghtGivenFemale = stats.norm.pdf(sample2[0], mean
 probabilityWeightIsTheSample2WeightGivenFemale = stats.norm.pdf(sample2[1], meanFemaleWeight, stdFemaleWeight)
 probabilityFoootIsTheSample2FootGivenFemale = stats.norm.pdf(sample2[2], meanFemaleFoot, stdFemaleFoot)
 
-probabilityMaleSample1 = probabilityMaleFromTest * probabilityHeightIsTheSample1HieghtGivenMale * probabilityWeightIsTheSample1WeightGivenMale * probabilityFoootIsTheSample1FootGivenMale
-probabilityFemaleSample1 = probabilityFemaleFromTest * probabilityHeightIsTheSample1HieghtGivenFemale * probabilityWeightIsTheSample1WeightGivenFemale * probabilityFoootIsTheSample1FootGivenFemale
+probabilityMaleSample1 = priorMale * probabilityHeightIsTheSample1HieghtGivenMale * probabilityWeightIsTheSample1WeightGivenMale * probabilityFoootIsTheSample1FootGivenMale
+probabilityFemaleSample1 = priorFemale * probabilityHeightIsTheSample1HieghtGivenFemale * probabilityWeightIsTheSample1WeightGivenFemale * probabilityFoootIsTheSample1FootGivenFemale
 
-probabilityMaleSample2 = probabilityMaleFromTest * probabilityHeightIsTheSample2HieghtGivenMale * probabilityWeightIsTheSample2WeightGivenMale * probabilityFoootIsTheSample2FootGivenMale
-probabilityFemaleSample2 = probabilityFemaleFromTest * probabilityHeightIsTheSample2HieghtGivenFemale * probabilityWeightIsTheSample2WeightGivenFemale * probabilityFoootIsTheSample2FootGivenFemale
+probabilityMaleSample2 = priorMale * probabilityHeightIsTheSample2HieghtGivenMale * probabilityWeightIsTheSample2WeightGivenMale * probabilityFoootIsTheSample2FootGivenMale
+probabilityFemaleSample2 = priorFemale * probabilityHeightIsTheSample2HieghtGivenFemale * probabilityWeightIsTheSample2WeightGivenFemale * probabilityFoootIsTheSample2FootGivenFemale
 
 
 print("Probability Male Sample1:", probabilityMaleSample1)
