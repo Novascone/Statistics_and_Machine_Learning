@@ -1,2 +1,2 @@
-# Statistics_and_Machine_Learning
+# Stats_ML_Models
  
